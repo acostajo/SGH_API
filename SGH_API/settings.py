@@ -33,6 +33,10 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'rest_framework',
     'ficha.apps.FichaConfig',
+    'orinasimple.apps.OrinasimpleConfig',
+    'orinasimpledatoslab.apps.OrinasimpledatoslabConfig',
+    'comorbilidades.apps.ComorbilidadesConfig',
+    'enfermedad.apps.EnfermedadConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -89,7 +93,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'SGHBackEnd',
         'USER': 'postgres',
-        'PASSWORD':'0909',
+        'PASSWORD':'0301',
         'HOST':'localhost',
         'PORT':'5432'
     }
