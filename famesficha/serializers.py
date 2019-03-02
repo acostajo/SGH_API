@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from e.models import FamesFicha  
+from famesficha.models import FamesFicha  
 
 class FamesFichaSerializer(serializers.ModelSerializer):
     class Meta:
