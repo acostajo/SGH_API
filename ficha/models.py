@@ -1,6 +1,5 @@
 from django.db import models
 
-
 #models.IntegerField(), models.CharField(max_length=50)
 
 class Ficha(models.Model):
