@@ -1,4 +1,7 @@
-from django.contrib import admin
-from .models import EventoCardiovascularFicha
+from django.urls import path
+from eventocardio_ficha import views
 
-admin.site.register(EventoCardiovascularFicha)
+urlpatterns = [
+    path('eventocardio_ficha/', views.eventocardiovascularficha_list),
+    path('eventocardio_ficha/<int:pk>/', views.eventocardiovascularficha_detail),
+]

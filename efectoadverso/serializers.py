@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from e.models import EfectoAdverso  
+from efectoadverso.models import EfectoAdverso  
 
 class EfectoAdversoSerializer(serializers.ModelSerializer):
     class Meta:

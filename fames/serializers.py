@@ -1,10 +1,10 @@
 from rest_framework import serializers
-from e.models import Fames  
+from fames.models import Fames  
 
 class FamesSerializer(serializers.ModelSerializer):
     class Meta:
         model = Fames
-        fields = ('codfame
+        fields = ('codfame',
         'codusuario',
         'nombre',
         'fechacreada')

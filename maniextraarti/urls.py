@@ -1,4 +1,7 @@
-from django.contrib import admin
-from .models import ManiExtraArti
+from django.urls import path
+from maniextraarti import views
 
-admin.site.register(ManiExtraArti)
+urlpatterns = [
+    path('maniextraarti/', views.maniextraarti_list),
+    path('maniextraarti/<int:pk>/', views.maniextraarti_detail),
+]

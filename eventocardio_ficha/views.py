@@ -2,8 +2,8 @@ from django.http import HttpResponse, JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from rest_framework.renderers import JSONRenderer
 from rest_framework.parsers import JSONParser
-from eventocardiovascularficha.models import EventoCardiovascularFicha
-from eventocardiovascularficha.serializers import EventoCardiovascularFichaSerializer
+from eventocardio_ficha.models import EventoCardiovascularFicha
+from eventocardio_ficha.serializers import EventoCardiovascularFichaSerializer
 
 @csrf_exempt
 def eventocardiovascularficha_list(request):
@@ -11,7 +11,7 @@ def eventocardiovascularficha_list(request):
     Lista todas los eventos cardiovasculares asociados a la ficha
     """
     if request.method == 'GET':
-        eventocardiovascularfichas = EventoCardiovascualar.objects.all()
+        eventocardiovascularfichas = EventoCardiovascularFicha.objects.all()
         serializer = EventoCardiovascularFichaSerializer(eventocardiovascularfichas, many=True)
         return JsonResponse(serializer.data, safe=False)
 

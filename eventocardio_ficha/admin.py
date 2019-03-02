@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import EventoCardiovascularFicha
+from eventocardio_ficha.models import EventoCardiovascularFicha
 
 admin.site.register(EventoCardiovascularFicha)
