@@ -1,5 +1,30 @@
 from rest_framework import serializers
-from ficha.models import Ficha  
+#from ficha.models import Ficha  
+from ficha.models import Ficha, Paciente
+
+
+class PacienteSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Paciente
+        fields = ('codpaciente',
+        'codusuario',
+        'nombres',
+        'apellidos',
+        'cedula',
+        'sexo',
+        'fechainclusion',
+        'procedencia',
+        'nacionalidad',
+        'escolaridad',
+        'diagnostico',
+        'fechadiagnos',
+        'fechanaci',
+        'estadocivil',
+        'profesion',
+        'telefono',
+        'lineabaja',
+        'fechacreada')
+
 
 class FichaSerializer(serializers.ModelSerializer):
     class Meta:
@@ -39,3 +64,4 @@ class FichaSerializer(serializers.ModelSerializer):
         'rxpies',
         'rxpiesfecha',
         'fechacreadaa')
+
