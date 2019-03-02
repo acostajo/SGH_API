@@ -2,9 +2,34 @@ from django.db import models
 
 #models.IntegerField(), models.CharField(max_length=50)
 
+class Paciente (models.Model):
+    codpaciente	= models.AutoField(primary_key=True) #código interno único para el paciente
+    codusuario = models.IntegerField() #código interno de usuario, para saber quién agrego la ficha
+    nombres = models.CharField(max_length=80) #nombres completos del paciente
+    apellidos = models.CharField(max_length=80) #apellidos completos del paciente
+    cedula= models.CharField(max_length=10, null=True, unique=True) #cédula de identidad del paciente
+    sexo = models.CharField(max_length=1) #sexo del paciente
+    fechainclusion = models.DateField() #fecha de inclusión del paciente
+    procedencia = models.CharField(max_length=80) #procedencia del paciente
+    nacionalidad = models.CharField(max_length=80) #nacionalidad del paciente
+    escolaridad = models.CharField(max_length=80) #escolaridad del paciente
+    diagnostico = models.CharField(max_length=80) #diagnóstico inicial del paciente
+    fechadiagnos = models.DateField() #fecha del diagnostico
+    fechanaci = models.DateField() #fecha de nacimiento del paciente
+    estadocivil = models.CharField(max_length=20) #estado civil del paciente
+    profesion = models.CharField(max_length=20) #profesión del paciente
+    telefono = models.CharField(max_length=20) #número de teléfono del paciente
+    lineabaja = models.CharField(max_length=20) #número de línea baja del paciente
+    fechacreada	= models.DateField(auto_now=True)# fecha de creación del paciente        
+        
+    class Meta:
+        ordering = ('codpaciente',)
+
 class Ficha(models.Model):
     codficha = models.AutoField(primary_key=True) #codigo de la ficha
-    codpaciente = models.IntegerField() #codigo del paciente 
+    codpaciente = models.OneToOneField(Paciente, on_delete=models.CASCADE,  null=True) #codigo del paciente
+    #codpaciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True) #codigo del paciente 
+    #codpaciente = models.IntegerField() 
     codpatron = models.IntegerField() #código interno único para anapatron, para saber que patron tiene asociada la ficha HA
     codusuario = models.IntegerField() #código interno de usuario, para saber quién agrego la ficha
     nhc = models.IntegerField() #número de historial clínico, código externo de la ficha, por el cual se manejan los usuarios
@@ -41,3 +66,5 @@ class Ficha(models.Model):
 
     class Meta:
         ordering = ('codficha',)
+
+
