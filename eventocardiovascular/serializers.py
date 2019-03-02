@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from e.models import EventoCardiovascular  
+from eventocardiovascular.models import EventoCardiovascular  
 
 class EventoCardiovascularSerializer(serializers.ModelSerializer):
     class Meta:

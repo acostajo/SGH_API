@@ -1,4 +1,7 @@
-from django.contrib import admin
-from .models import Manifestacion
+from django.urls import path
+from manifestacion import views
 
-admin.site.register(Manifestacion)
+urlpatterns = [
+    path('manifestacion/', views.manifestacion_list),
+    path('manifestacion/<int:pk>/', views.manifestacion_detail),
+]

@@ -1,4 +1,7 @@
-from django.contrib import admin
-from .models import FamesFicha
+from django.urls import path
+from famesficha import views
 
-admin.site.register(FamesFicha)
+urlpatterns = [
+    path('famesficha/', views.famesficha_list),
+    path('famesficha/<int:pk>/', views.famesficha_detail),
+]

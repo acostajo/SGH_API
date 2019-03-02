@@ -24,5 +24,12 @@ urlpatterns = [
     path('', include('orinasimpledatoslab.urls')),
     path('', include('enfermedad.urls')),
     path('', include('comorbilidades.urls')),
-
+    path('', include('efectoadverso.urls')),
+    path('', include('efectoadverso_consulta.urls')),
+    path('', include('eventocardio_ficha.urls')),
+    path('', include('eventocardiovascular.urls')),  
+    path('', include('fames.urls')),
+    path('', include('famesficha.urls')),
+    path('', include('maniextraarti.urls')),
+    path('', include('manifestacion.urls')),
 ]
