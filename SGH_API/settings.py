@@ -43,6 +43,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'consulta.apps.ConsultaConfig',
+    'efectoadverso.apps.EfectoAdversoConfig',
+    'efectoadverso_consulta.apps.EfectoadversoConsultaConfig',
+    'eventocardiovascular.apps.EventocardiovascularConfig',
+    'eventocardio_ficha.apps.EventocardioFichaConfig',
+    'fames.apps.FamesConfig',
+    'famesficha.apps.FamesFichaConfig',
+    'manifestacion.apps.ManifestacionConfig',
+    'maniextraarti.apps.ManiExtraArtiConfig',
 ]
 
 MIDDLEWARE = [
