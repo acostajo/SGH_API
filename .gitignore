@@ -115,5 +115,5 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# Migrations
+# Migrations, este es el que le agregue para que no reconozca todos los arcivos con esa extension
 *.pyc
