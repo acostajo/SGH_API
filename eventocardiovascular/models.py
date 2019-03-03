@@ -11,4 +11,4 @@ class EventoCardiovascular(models.Model):
 
 
     class Meta:
-        ordering = ('codeventocardio',)
+        ordering = ('codeventocardio',) 
