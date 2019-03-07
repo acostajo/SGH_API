@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "django_filters",
     "corsheaders",
     "rest_framework",
     "ficha.apps.FichaConfig",
@@ -57,7 +58,7 @@ INSTALLED_APPS = [
 
 
 MIDDLEWARE = [
-    'corsheaders.middleware.CorsMiddleware',
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -138,3 +139,4 @@ STATIC_URL = "/static/"
 CORS_ORIGIN_WHITELIST = "localhost:8000/"
 
 CORS_ORIGIN_ALLOW_ALL = True
+

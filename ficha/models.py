@@ -36,7 +36,7 @@ class Paciente(models.Model):
 class Ficha(models.Model):
     codficha = models.AutoField(primary_key=True)  # codigo de la ficha
     codpaciente = models.OneToOneField(
-        Paciente, on_delete=models.CASCADE, null=True
+        Paciente, on_delete=models.CASCADE, null=False
     )  # codigo del paciente
     # codpaciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True) #codigo del paciente
     # codpaciente = models.IntegerField()
