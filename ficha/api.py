@@ -9,7 +9,7 @@ class FichaViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = FichaSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("nhc", "codpaciente")
+    filter_fields = ("codpaciente",)
 
 
 class PacienteViewSet(viewsets.ModelViewSet):
@@ -17,4 +17,4 @@ class PacienteViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = PacienteSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("cedula", "codpaciente")
+    filter_fields = ("nrodocumento", "codpaciente",)

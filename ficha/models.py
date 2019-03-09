@@ -12,8 +12,11 @@ class Paciente(models.Model):
     )  # código interno de usuario, para saber quién agrego la ficha
     nombres = models.CharField(max_length=80)  # nombres completos del paciente
     apellidos = models.CharField(max_length=80)  # apellidos completos del paciente
-    cedula = models.CharField(
-        max_length=10, null=True, unique=True
+    tipodocumento=models.CharField(
+        max_length=30, null=False,default='default'
+    ) 
+    nrodocumento = models.CharField(
+        max_length=10, null=False, unique=True,default='default'
     )  # cédula de identidad del paciente
     sexo = models.CharField(max_length=1)  # sexo del paciente
     fechainclusion = models.DateField()  # fecha de inclusión del paciente
@@ -26,7 +29,6 @@ class Paciente(models.Model):
     estadocivil = models.CharField(max_length=20)  # estado civil del paciente
     profesion = models.CharField(max_length=20)  # profesión del paciente
     telefono = models.CharField(max_length=20)  # número de teléfono del paciente
-    lineabaja = models.CharField(max_length=20)  # número de línea baja del paciente
     fechacreada = models.DateField(auto_now=True)  # fecha de creación del paciente
 
     class Meta:
@@ -47,7 +49,7 @@ class Ficha(models.Model):
         models.IntegerField()
     )  # código interno de usuario, para saber quién agrego la ficha
     nhc = (
-        models.IntegerField()
+        models.IntegerField(unique=True)
     )  # número de historial clínico, código externo de la ficha, por el cual se manejan los usuarios
     iniciosint = (
         models.DateField()
@@ -85,13 +87,17 @@ class Ficha(models.Model):
     cesareas = models.IntegerField()  # Cantidad de Cesáreas
     abortos = models.IntegerField()  # Cantidad de abortos
     hisjospost = models.BooleanField()  # sí o no, tuvo hijos
-    factorreuma = models.IntegerField()  # factor reumatoide
-    acp = models.IntegerField()  # anticuerpos antipéptidos cíclicos citrulinados
-    acp_nivel = models.IntegerField()  # anticuerpo antinuclear
+    factorreuma_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
+    factorreuma_neg = models.CharField(max_length=50,default='default')
+    factorreuma_nivel = models.CharField(max_length=50,default='default')
+    
+    acp_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
+    acp_neg = models.CharField(max_length=50,default='default')
+    acp_nivel = models.CharField(max_length=50,default='default')
+    ana_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
+    ana_neg = models.CharField(max_length=50,default='default')
     rxmanos = models.BooleanField()  # erecciones sí o no
-    rxmanosfecha = (
-        models.DateField()
-    )  # la fecha que tuvo las erecciones ----------> wtf erecciones hei
+    rxmanosfecha = (models.DateField())  # la fecha que tuvo las erecciones ----------> wtf erecciones hei
     rxpies = models.BooleanField()  # erecciones sí o no
     rxpiesfecha = models.DateField()  # la fecha que tuvo las erecciones
     fechacreadaa = models.DateField(auto_now=True)  # fecha de creación de la ficha HA
