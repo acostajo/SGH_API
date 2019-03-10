@@ -5,7 +5,8 @@ from ficha.models import Ficha
 
 class Consulta(models.Model):
     codconsulta	= models.AutoField(primary_key=True) #código interno único para la ficha consulta
-    codficha = models.ForeignKey(Ficha, on_delete=models.CASCADE, null=True)
+    codficha = models.ManyToManyField(Ficha, blank=False, null=True)
+    #codficha = models.ForeignKey(Ficha, on_delete=models.DO_NOTHING, null=True)
     codusuario = models.IntegerField() #código interno de usuario, para saber quién agrego la ficha de consulta
     edad = models.IntegerField(default=0) #edad del paciente
     fechaconsulta = models.DateField(auto_now=True) #fecha en la cual se emitió la consulta

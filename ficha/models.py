@@ -4,20 +4,12 @@ from django.db import models
 
 
 class Paciente(models.Model):
-    codpaciente = models.AutoField(
-        primary_key=True
-    )  # código interno único para el paciente
-    codusuario = (
-        models.IntegerField()
-    )  # código interno de usuario, para saber quién agrego la ficha
+    codpaciente = models.AutoField(primary_key=True)  # código interno único para el paciente
+    codusuario = (models.IntegerField())  # código interno de usuario, para saber quién agrego la ficha
     nombres = models.CharField(max_length=80)  # nombres completos del paciente
     apellidos = models.CharField(max_length=80)  # apellidos completos del paciente
-    tipodocumento=models.CharField(
-        max_length=30, null=False,default='default'
-    ) 
-    nrodocumento = models.CharField(
-        max_length=10, null=False, unique=True,default='default'
-    )  # cédula de identidad del paciente
+    tipodocumento=models.CharField(max_length=30, null=False,default='') 
+    nrodocumento = models.CharField(max_length=10, null=False, unique=True,default='')  # cédula de identidad del paciente
     sexo = models.CharField(max_length=1)  # sexo del paciente
     fechainclusion = models.DateField()  # fecha de inclusión del paciente
     procedencia = models.CharField(max_length=80)  # procedencia del paciente
@@ -37,11 +29,9 @@ class Paciente(models.Model):
 
 class Ficha(models.Model):
     codficha = models.AutoField(primary_key=True)  # codigo de la ficha
-    codpaciente = models.OneToOneField(
-        Paciente, on_delete=models.CASCADE, null=False
-    )  # codigo del paciente
-    # codpaciente = models.ForeignKey(Paciente, on_delete=models.CASCADE, null=True) #codigo del paciente
-    # codpaciente = models.IntegerField()
+    codpaciente = models.OneToOneField(Paciente, on_delete=models.CASCADE)
+    #codpaciente = models.ForeignKey(Paciente, null=True, blank=True)
+    ##codpaciente = models.ForeignKey(Paciente, on_delete=models.CASCADE)  # codigo del paciente
     codpatron = (
         models.IntegerField()
     )  # código interno único para anapatron, para saber que patron tiene asociada la ficha HA
@@ -74,28 +64,27 @@ class Ficha(models.Model):
     )  # Antecedentes familiares de neoplasias (tumores)
     sedentarismo = models.BooleanField()  # Si el Paciente es sedentario
     actifisica = models.BooleanField()  # Si el Paciente realiza actividad física
+    #tabaquismo = models.BooleanField(null=True)  # Si el Paciente es tabaquista
     tabaqfecha = models.DateField()  # Fecha que comenzo a fumar
     tabnumero = models.IntegerField()  # Número  de paquetes que fuma/fumo por dia
     extabaq = models.BooleanField()  # Si fue fumador
     menarca = models.IntegerField()  # Edad de primera menstruación
     menopausia = models.IntegerField()  # Edad de menopausia
-    edadvidasex = (
-        models.IntegerField()
-    )  # A los cuantos años comenzó a tener actividad sexual
+    edadvidasex = models.IntegerField() # A los cuantos años comenzó a tener actividad sexual
     gestas = models.IntegerField()  # Cantidad de gestas
     partos = models.IntegerField()  # Cantidad de partos
     cesareas = models.IntegerField()  # Cantidad de Cesáreas
     abortos = models.IntegerField()  # Cantidad de abortos
     hisjospost = models.BooleanField()  # sí o no, tuvo hijos
-    factorreuma_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
-    factorreuma_neg = models.CharField(max_length=50,default='default')
-    factorreuma_nivel = models.CharField(max_length=50,default='default')
-    
-    acp_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
-    acp_neg = models.CharField(max_length=50,default='default')
-    acp_nivel = models.CharField(max_length=50,default='default')
-    ana_pos = models.CharField(max_length=50,default='default')  # factor reumatoide
-    ana_neg = models.CharField(max_length=50,default='default')
+    factorreuma_pos = models.CharField(max_length=50,default='')  # factor reumatoide
+    factorreuma_neg = models.CharField(max_length=50,default='')
+    factorreuma_nivel = models.CharField(max_length=50,default='')
+    acp_pos = models.CharField(max_length=50,default='')  # factor reumatoide
+    acp_neg = models.CharField(max_length=50,default='')
+    acp_nivel = models.CharField(max_length=50,default='')
+    ana_pos = models.CharField(max_length=50,default='')  # factor reumatoide
+    ana_neg = models.CharField(max_length=50,default='')
+    ana_patron = models.CharField(max_length=50,default='')
     rxmanos = models.BooleanField()  # erecciones sí o no
     rxmanosfecha = (models.DateField())  # la fecha que tuvo las erecciones ----------> wtf erecciones hei
     rxpies = models.BooleanField()  # erecciones sí o no
