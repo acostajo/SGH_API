@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import ConsultaViewSet
 from django.urls import path
-from consulta import views
 
-urlpatterns = [
-    path('consultas/', views.consulta_list),
-    path('consultas/<int:pk>/', views.consulta_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/consulta", ConsultaViewSet, "consulta")
+
+urlpatterns = router.urls
