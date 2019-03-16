@@ -1,7 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import Ficha, Paciente
+from .models import Ficha
 from rest_framework import viewsets, permissions
-from .serializers import FichaSerializer, PacienteSerializer
+from .serializers import FichaSerializer
 
 
 class FichaViewSet(viewsets.ModelViewSet):
@@ -9,12 +9,4 @@ class FichaViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = FichaSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("codpaciente",)
-
-
-class PacienteViewSet(viewsets.ModelViewSet):
-    queryset = Paciente.objects.all()
-    permission_classes = [permissions.AllowAny]
-    serializer_class = PacienteSerializer
-    filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("nrodocumento", "codpaciente",)
+    filter_fields = ("nrodocumento", "codficha",)
