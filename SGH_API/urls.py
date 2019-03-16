@@ -19,6 +19,7 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('ficha.urls')),
+    path('', include('panolab.urls')),
     path('', include('consulta.urls')),
     path('', include('orinasimple.urls')),
     path('', include('orinasimpledatoslab.urls')),
@@ -27,7 +28,7 @@ urlpatterns = [
     path('', include('efectoadverso.urls')),
     path('', include('efectoadverso_consulta.urls')),
     path('', include('eventocardio_ficha.urls')),
-    path('', include('eventocardiovascular.urls')),  
+    path('', include('eventocardiovascular.urls')),
     path('', include('fames.urls')),
     path('', include('famesficha.urls')),
     path('', include('maniextraarti.urls')),
