@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "famesficha.apps.FamesFichaConfig",
     "manifestacion.apps.ManifestacionConfig",
     "maniextraarti.apps.ManiExtraArtiConfig",
+    "panolab.apps.PanolabConfig",
 ]
 
 
@@ -139,4 +140,3 @@ STATIC_URL = "/static/"
 CORS_ORIGIN_WHITELIST = "localhost:8000/"
 
 CORS_ORIGIN_ALLOW_ALL = True
-

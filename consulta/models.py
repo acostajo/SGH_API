@@ -14,7 +14,7 @@ class Consulta(models.Model):
     codusuario = (models.IntegerField())
     edad = models.IntegerField(default=0)  # edad del paciente
     # fecha en la cual se emitió la consulta
-    fechaconsulta = models.DateField(auto_now=True)
+    fechaconsulta = models.DateField()
     diagnostico = models.CharField(max_length=80)  # descripción diagnostico
     tratamientoactual = models.CharField(
         max_length=200, blank=True)  # descripción tratamiento actual
