@@ -73,21 +73,24 @@ class Ficha(models.Model):
     apfneoplasias = models.CharField(
         max_length=50, blank=True
     )  # Antecedentes familiares de neoplasias (tumores)
-    sedentarismo = models.BooleanField()  # Si el Paciente es sedentario
-    actifisica = models.BooleanField()  # Si el Paciente realiza actividad física
+    sedentarismo = models.BooleanField(
+        null=True)  # Si el Paciente es sedentario
+    # Si el Paciente realiza actividad física
+    actifisica = models.BooleanField(null=True)
     # tabaquismo = models.BooleanField(null=True)  # Si el Paciente es tabaquista
     # Fecha que comenzo a fumar
     tabaqfecha = models.DateField(blank=True, null=True)
     tabnumero = models.IntegerField(null=True, blank=True)
-    extabaq = models.BooleanField()  # Si fue fumador
-    menarca = models.IntegerField()  # Edad de primera menstruación
-    menopausia = models.IntegerField()  # Edad de menopausia
+    extabaq = models.BooleanField(null=True)  # Si fue fumador
+    menarca = models.IntegerField(null=True)  # Edad de primera menstruación
+    menopausia = models.IntegerField(null=True)  # Edad de menopausia
     edadvidasex = models.IntegerField(null=True, blank=True)
-    gestas = models.IntegerField()  # Cantidad de gestas
-    partos = models.IntegerField()  # Cantidad de partos
-    cesareas = models.IntegerField()  # Cantidad de Cesáreas
-    abortos = models.IntegerField()  # Cantidad de abortos
-    hisjospost = models.BooleanField()  # sí o no, tuvo hijos
+    gestas = models.IntegerField(null=True)  # Cantidad de gestas
+    partos = models.IntegerField(null=True)  # Cantidad de partos
+    cesareas = models.IntegerField(null=True)  # Cantidad de Cesáreas
+    abortos = models.IntegerField(null=True)  # Cantidad de abortos
+    rxpies = models.BooleanField(null=True)  # erecciones sí o no
+    hisjospost = models.BooleanField(null=True)  # sí o no, tuvo hijos
     factorreuma_pos = models.CharField(
         max_length=50, blank=True)  # factor reumatoide
     factorreuma_neg = models.CharField(max_length=50, blank=True)
@@ -98,9 +101,9 @@ class Ficha(models.Model):
     ana_pos = models.CharField(max_length=50, blank=True)  # factor reumatoide
     ana_neg = models.CharField(max_length=50, blank=True)
     ana_patron = models.CharField(max_length=50, blank=True)
-    rxmanos = models.BooleanField()  # erecciones sí o no
+    rxmanos = models.BooleanField(null=True)  # erecciones sí o no
     rxmanosfecha = models.DateField(blank=True, null=True)
-    rxpies = models.BooleanField()  # erecciones sí o no
+    rxpies = models.BooleanField(null=True)  # erecciones sí o no
     rxpiesfecha = models.DateField(blank=True, null=True)
     # fecha de creación de la ficha HA
     fechacreadaa = models.DateField(auto_now=True)
