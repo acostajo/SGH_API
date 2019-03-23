@@ -6,7 +6,8 @@ from ficha.models import Ficha
 
 class Panolab(models.Model):
     # código interno único para la ficha panorámica de laboratorio
-    coddatoslab = models.AutoField(primary_key=True)
+    codpanolab = models.AutoField(primary_key=True)
+    fechapanolab = models.DateField(null=True, blank=True)
     # código interno único para la ficha HA, para saber a qué ficha HA está asociada la ficha panorámica de laboratorio
     codficha = models.ForeignKey(
         Ficha, on_delete=models.DO_NOTHING, null=False)
@@ -81,4 +82,4 @@ class Panolab(models.Model):
     fechacreada = models.DateField(auto_now=True)
 
     class Meta:
-        ordering = ("coddatoslab",)
+        ordering = ("codpanolab",)
