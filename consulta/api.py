@@ -1,7 +1,7 @@
 from django_filters.rest_framework import DjangoFilterBackend
-from .models import Consulta
 from rest_framework import viewsets, permissions
-from .serializers import ConsultaSerializer  # este nomas era
+from .models import Consulta
+from .serializers import ConsultaSerializer
 
 
 class ConsultaViewSet(viewsets.ModelViewSet):
@@ -14,4 +14,5 @@ class ConsultaViewSet(viewsets.ModelViewSet):
     # este es algo que requiere el django para que funcione el filtro
     filter_backends = (DjangoFilterBackend,)
     # estos son los filtros, aca asignamos los campos de la base de datos por el cual vamos a buscar los objetos
-    filter_fields = ("fechaconsulta", 'codficha', 'codconsulta',)
+    filter_fields = ("fechaconsulta", "codficha", "codconsulta")
+
