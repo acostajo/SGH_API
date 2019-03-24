@@ -9,18 +9,22 @@ class Consulta(models.Model):
     codconsulta = models.AutoField(primary_key=True)
     # codficha = models.ForeignKey(Ficha, on_delete=models.DO_NOTHING, null=True)
     codficha = models.ForeignKey(
-        Ficha, on_delete=models.DO_NOTHING, null=False, default=0)
+        Ficha, on_delete=models.DO_NOTHING, null=False, default=0
+    )
     # código interno de usuario, para saber quién agrego la ficha de consulta
-    codusuario = (models.IntegerField())
+    codusuario = models.IntegerField()
     edad = models.IntegerField(default=0)  # edad del paciente
     # fecha en la cual se emitió la consulta
     fechaconsulta = models.DateField()
     diagnostico = models.CharField(max_length=80)  # descripción diagnostico
     tratamientoactual = models.CharField(
-        max_length=200, blank=True)  # descripción tratamiento actual
+        max_length=200, blank=True
+    )  # descripción tratamiento actual
     evolucion = models.CharField(max_length=80)  # descripción de la evolución
     # descripción de las limitaciones que posee el Paciente
     limitacion = models.CharField(max_length=80)
+
+
     limitacionmotivo = models.CharField(max_length=80,)
     presionarte = models.IntegerField(blank=True, null=True)  # medida de la presión arterial
     frescresp = models.IntegerField(blank=True, null=True)  # medida de la frecuencia cardíaca
@@ -43,6 +47,8 @@ class Consulta(models.Model):
     sientepaci = models.CharField(max_length=80, blank=True, default='Sin dolor' )
     # descripción del plan para el paciente
     plan = models.CharField(max_length=80,blank=True, null=True)
+
+
     # fecha de creación de la consulta
 
     fechacreada = models.DateField(auto_now=True)
