@@ -23,15 +23,21 @@ class Consulta(models.Model):
     evolucion = models.CharField(max_length=80)  # descripción de la evolución
     # descripción de las limitaciones que posee el Paciente
     limitacion = models.CharField(max_length=80)
-
-
-    limitacionmotivo = models.CharField(max_length=80,)
-    presionarte = models.IntegerField(blank=True, null=True)  # medida de la presión arterial
-    frescresp = models.IntegerField(blank=True, null=True)  # medida de la frecuencia cardíaca
-    freccardia = models.IntegerField(blank=True, null=True)  # medida de la frecuencia respiratoria
+    limitacionmotivo = models.CharField(max_length=80)
+    presionarte = models.IntegerField(
+        blank=True, null=True
+    )  # medida de la presión arterial
+    frescresp = models.IntegerField(
+        blank=True, null=True
+    )  # medida de la frecuencia cardíaca
+    freccardia = models.IntegerField(
+        blank=True, null=True
+    )  # medida de la frecuencia respiratoria
     peso = models.IntegerField(blank=True, null=True)  # peso
     talla = models.IntegerField(blank=True, null=True)  # talla
-    nad = models.IntegerField(blank=True, null=True)  # número de articulaciones dolorosas
+    nad = models.IntegerField(
+        blank=True, null=True
+    )  # número de articulaciones dolorosas
     # número de articulaciones tumefactas kore de quien era ese migrate q estaba abierto?, no s, de consulta o de ficha nomas va ser
     nat = models.IntegerField(blank=True, null=True)
     eva = models.IntegerField(blank=True, null=True)  # escala visual analógica
@@ -40,15 +46,15 @@ class Consulta(models.Model):
     cdai = models.IntegerField(blank=True, null=True)  # clinical disease activity index
     sdai = models.IntegerField(blank=True, null=True)  # simple disease activity index
     haq = models.IntegerField(blank=True, null=True)  # health assessment questionnaire
-    das28pcr = models.IntegerField(blank=True, null=True)  # disease activity score 28 - proteína c reactiva
+    das28pcr = models.IntegerField(
+        blank=True, null=True
+    )  # disease activity score 28 - proteína c reactiva
     # disease activity score 28 - velocidad de sedimentación globular
     das28vsg = models.IntegerField(blank=True, null=True)
     # escala del 0 (sin dolor) al 10 (máximo dolor)
-    sientepaci = models.CharField(max_length=80, blank=True, default='Sin dolor' )
+    sientepaci = models.CharField(max_length=80, blank=True, null=True)
     # descripción del plan para el paciente
-    plan = models.CharField(max_length=80,blank=True, null=True)
-
-
+    plan = models.CharField(max_length=80, blank=True, null=True)
     # fecha de creación de la consulta
 
     fechacreada = models.DateField(auto_now=True)
