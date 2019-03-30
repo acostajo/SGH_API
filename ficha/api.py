@@ -10,3 +10,4 @@ class FichaViewSet(viewsets.ModelViewSet):
     serializer_class = FichaSerializer
     filter_backends = (DjangoFilterBackend,)
     filter_fields = ("nrodocumento", "codficha",)
+    
