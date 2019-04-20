@@ -34,7 +34,9 @@ class Consulta(models.Model):
         blank=True, null=True
     )  # medida de la frecuencia respiratoria
     peso = models.IntegerField(blank=True, null=True)  # peso
-    talla = models.IntegerField(blank=True, null=True)  # talla
+    talla = models.DecimalField(decimal_places=2,max_digits=5,
+        blank=True, null=True
+    )  # talla
     nad = models.IntegerField(
         blank=True, null=True
     )  # número de articulaciones dolorosas
@@ -43,14 +45,16 @@ class Consulta(models.Model):
     eva = models.IntegerField(blank=True, null=True)  # escala visual analógica
     vgp = models.IntegerField(blank=True, null=True)  # valoración global del Paciente
     vgm = models.IntegerField(blank=True, null=True)  # valoración global del médico
+    crp =  models.IntegerField(blank=True, null=True)
+    vsg =  models.IntegerField(blank=True, null=True)
     cdai = models.IntegerField(blank=True, null=True)  # clinical disease activity index
     sdai = models.IntegerField(blank=True, null=True)  # simple disease activity index
     haq = models.IntegerField(blank=True, null=True)  # health assessment questionnaire
-    das28pcr = models.IntegerField(
+    das28pcr = models.DecimalField(decimal_places=2,max_digits=5,
         blank=True, null=True
     )  # disease activity score 28 - proteína c reactiva
     # disease activity score 28 - velocidad de sedimentación globular
-    das28vsg = models.IntegerField(blank=True, null=True)
+    das28vsg = models.DecimalField(decimal_places=2,max_digits=5,blank=True, null=True)
     # escala del 0 (sin dolor) al 10 (máximo dolor)
     sientepaci = models.CharField(max_length=80, blank=True, null=True)
     # descripción del plan para el paciente
