@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import ComorbilidadViewSet
 from django.urls import path
-from comorbilidades import views
 
-urlpatterns = [
-    path('comorbilidades/', views.comorbilidad_list),
-    path('comorbilidades/<int:pk>/', views.comorbilidad_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/comorbilidad", ComorbilidadViewSet, "comorbilidad")
+
+urlpatterns = router.urls

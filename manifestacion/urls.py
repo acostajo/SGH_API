@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import ManifestacionViewSet
 from django.urls import path
-from manifestacion import views
 
-urlpatterns = [
-    path('manifestacion/', views.manifestacion_list),
-    path('manifestacion/<int:pk>/', views.manifestacion_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/manif", ManifestacionViewSet, "manif")
+
+urlpatterns = router.urls

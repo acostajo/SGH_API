@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import EnfermedadViewSet
 from django.urls import path
-from enfermedad import views
 
-urlpatterns = [
-    path('enfermedades/', views.enfermedad_list),
-    path('enfermedades/<int:pk>/', views.enfermedad_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/enfermedad", EnfermedadViewSet, "enfermedad")
+
+urlpatterns = router.urls

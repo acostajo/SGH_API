@@ -6,9 +6,9 @@ from ficha.models import Ficha
 
 class EventoCardiovascularFicha(models.Model):
     codevencardofic = models.AutoField(primary_key=True) #código interno único para el evento cardiovascular asociado a la ficha
-    codevencardio= models.ForeignKey(EventoCardiovascular,on_delete=models.DO_NOTHING, null=True) # código interno único para el evento cardiovascular
+    codevencardio = models.IntegerField() # código interno único para el evento cardiovascular
     #codficha	= models.IntegerField() # código interno único para la ficha HA, para saber a qué ficha HA está asociada el evento cardiovascular
-    codficha	= models.ForeignKey(Ficha,  on_delete=models.DO_NOTHING, null=True ) # código interno único para la ficha HA, para saber a qué ficha HA está asociada el evento cardiovascular 
+    codficha	= models.IntegerField() # código interno único para la ficha HA, para saber a qué ficha HA está asociada el evento cardiovascular 
 
     class Meta:
         ordering = ('codevencardofic',)
