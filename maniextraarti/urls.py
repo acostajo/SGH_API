@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import ManiExtraArtiViewSet
 from django.urls import path
-from maniextraarti import views
 
-urlpatterns = [
-    path('maniextraarti/', views.maniextraarti_list),
-    path('maniextraarti/<int:pk>/', views.maniextraarti_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/manif_extra_art", ManiExtraArtiViewSet, "manif_extra_art")
+
+urlpatterns = router.urls
