@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import EfectoAdversoViewSet
 from django.urls import path
-from efectoadverso import views
 
-urlpatterns = [
-    path('efectoadversos/', views.efectoadverso_list),
-    path('efectoadversos/<int:pk>/', views.efectoadverso_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/efecto_adverso", EfectoAdversoViewSet, "efecto_adverso")
+
+urlpatterns = router.urls

@@ -5,6 +5,4 @@ from efectoadverso_consulta.models import EfectoAdversoConsulta
 class EfectoAdversoConsultaSerializer(serializers.ModelSerializer):
     class Meta:
         model = EfectoAdversoConsulta
-        fields = ('codefecaddl',
-                  'codefecad',
-                  'codpanolab')
+        fields = '__all__'
