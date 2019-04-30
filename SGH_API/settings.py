@@ -46,6 +46,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "consulta.apps.ConsultaConfig",
+    'estudio.apps.EstudioConfig',
+    'ordenestudio.apps.OrdenestudioConfig',
     "efectoadverso.apps.EfectoAdversoConfig",
     "efectoadverso_consulta.apps.EfectoadversoConsultaConfig",
     "eventocardiovascular.apps.EventocardiovascularConfig",
@@ -98,7 +100,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "0909",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "5432",
     }
