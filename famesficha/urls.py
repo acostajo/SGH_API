@@ -1,7 +1,9 @@
+from rest_framework import routers
+from .api import FameFichaViewSet
 from django.urls import path
-from famesficha import views
 
-urlpatterns = [
-    path('famesficha/', views.famesficha_list),
-    path('famesficha/<int:pk>/', views.famesficha_detail),
-]
+
+router = routers.DefaultRouter()
+router.register("api/famesficha", FameFichaViewSet, "famesficha")
+
+urlpatterns = router.urls

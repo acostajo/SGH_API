@@ -33,4 +33,7 @@ urlpatterns = [
     path('', include('famesficha.urls')),
     path('', include('maniextraarti.urls')),
     path('', include('manifestacion.urls')),
+    path('', include('ordenestudio.urls')),
+    path('', include('estudio.urls')),
+    path('', include('famesficha.urls')),
 ]
