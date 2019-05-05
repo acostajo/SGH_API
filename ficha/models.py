@@ -79,8 +79,8 @@ class Ficha(models.Model):
         null=True
     )  # Si el Paciente realiza actividad física
     tabaquismo = models.BooleanField(null=True)  # Si el Paciente es tabaquista
-    tabaqfecha = models.DateField(blank=True, null=True)  # Fecha que comenzo a fumar
-    tabnumero = models.IntegerField(null=True, blank=True)
+    tabaqfecha = models.DateField(null=True)  # Fecha que comenzo a fumar
+    tabnumero =  models.PositiveIntegerField(default=0,null=True)
     extabaq = models.BooleanField(null=True)  # Si fue fumador
     menarca = models.IntegerField(null=True)  # Edad de primera menstruación
     menopausia = models.IntegerField(null=True)  # Edad de menopausia
@@ -89,21 +89,20 @@ class Ficha(models.Model):
     partos = models.IntegerField(null=True)  # Cantidad de partos
     cesareas = models.IntegerField(null=True)  # Cantidad de Cesáreas
     abortos = models.IntegerField(null=True)  # Cantidad de abortos
-    rxpies = models.BooleanField(null=True)  # erecciones sí o no
     hisjospost = models.BooleanField(null=True)  # sí o no, tuvo hijos
     factorreuma_pos = models.CharField(max_length=50, blank=True)  # factor reumatoide
     factorreuma_neg = models.CharField(max_length=50, blank=True)
     factorreuma_nivel = models.CharField(max_length=50, blank=True)
-    acp_pos = models.CharField(max_length=50, blank=True)  # factor reumatoide
-    acp_neg = models.CharField(max_length=50, blank=True)
-    acp_nivel = models.CharField(max_length=50, blank=True)
+    acpa_pos = models.CharField(max_length=50, blank=True)  # factor reumatoide
+    acpa_neg = models.CharField(max_length=50, blank=True)
+    acpa_nivel = models.CharField(max_length=50, blank=True)
     ana_pos = models.CharField(max_length=50, blank=True)  # factor reumatoide
     ana_neg = models.CharField(max_length=50, blank=True)
     ana_patron = models.CharField(max_length=50, blank=True)
     rxmanos = models.BooleanField(null=True)  # erecciones sí o no
-    rxmanosfecha = models.DateField(blank=True, null=True)
+    rxmanosfecha = models.DateField(null=True)
     rxpies = models.BooleanField(null=True)  # erecciones sí o no
-    rxpiesfecha = models.DateField(blank=True, null=True)
+    rxpiesfecha = models.DateField(null=True)
     fechacreadaa = models.DateField(auto_now=True)  # fecha de creación de la ficha HA
 
     class Meta:
