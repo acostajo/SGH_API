@@ -72,4 +72,4 @@ class Panolab(models.Model):
     fechacreada = models.DateField(auto_now=True)
 
     class Meta:
-        ordering = ("codpanolab",)
+        ordering = ("-fechapanolab",)
