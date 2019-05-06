@@ -9,6 +9,7 @@ from ordenestudio.serializers import OrdenEstudioSerializer
 @csrf_exempt
 def ordenestudio_list(request):
     """ Lista todas las fichas  """
+    print(request.method)
     if request.method == "GET":
         ordenestudios = OrdenEstudio.objects.all()
         serializer = OrdenEstudioSerializer(ordenestudios, many=True)

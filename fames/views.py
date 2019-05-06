@@ -10,6 +10,7 @@ def fames_list(request):
     """
     Lista todas los fames 
     """
+    
     if request.method == 'GET':
         famess = Fames.objects.all()
         serializer = FamesSerializer(famess, many=True)

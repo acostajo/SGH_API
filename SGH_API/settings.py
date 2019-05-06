@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "rest_framework",
     "ficha.apps.FichaConfig",
+    "archivoestudio.apps.ArchivoestudioConfig",
     "orinasimple.apps.OrinasimpleConfig",
     "orinasimpledatoslab.apps.OrinasimpledatoslabConfig",
     "comorbilidades.apps.ComorbilidadesConfig",
@@ -100,7 +101,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "0909",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -142,3 +143,6 @@ STATIC_URL = "/static/"
 CORS_ORIGIN_WHITELIST = "localhost:8000/"
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, "media")

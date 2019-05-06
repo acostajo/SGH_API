@@ -9,11 +9,13 @@ from orinasimpledatoslab.serializers import OrinaSimpleDLSerializer
 def orinaDL_list(request):
     """ Lista todas las fichas  """
     if request.method == 'GET':
+        print(request)
         orinasDL = OrinaSimpleDL.objects.all()
         serializer = OrinaSimpleDLSerializer(orinasDL, many=True)
         return JsonResponse(serializer.data, safe=False)
 
     elif request.method == 'POST':
+        print(request)
         data = JSONParser().parse(request)
         serializer = OrinaSimpleDLSerializer(data=data)
         if serializer.is_valid():
