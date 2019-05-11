@@ -40,6 +40,7 @@ urlpatterns = [
     path('', include('estudio.urls')),
     path('', include('famesficha.urls')),
     url(r'^archivo/', include('archivoestudio.urls')),
+    path('', include('archivo.urls')), 
 ]
 
 if settings.DEBUG:

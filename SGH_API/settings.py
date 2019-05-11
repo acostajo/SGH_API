@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     "eventocardiovascular.apps.EventocardiovascularConfig",
     "eventocardio_ficha.apps.EventocardioFichaConfig",
     "fames.apps.FamesConfig",
+    "archivo.apps.ArchivoConfig",
     "famesficha.apps.FamesFichaConfig",
     "manifestacion.apps.ManifestacionConfig",
     "maniextraarti.apps.ManiExtraArtiConfig",
