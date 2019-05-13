@@ -9,5 +9,5 @@ class FichaViewSet(viewsets.ModelViewSet):
     permission_classes = [permissions.AllowAny]
     serializer_class = FichaSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("nrodocumento", "codficha",)
+    filter_fields = ("nrodocumento", "codficha","nombres","apellidos",)
     
