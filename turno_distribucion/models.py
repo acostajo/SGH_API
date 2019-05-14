@@ -4,6 +4,7 @@ from django.db import models
 class TurnoDist(models.Model):
     codturnodist=models.AutoField(primary_key=True)
     desturno=models.CharField(null=True,blank=True,max_length=50)
+    turno=models.CharField(null=True,blank=True,max_length=50)
     horaturno=models.CharField(null=True,blank=True,max_length=50)
 
     class Meta:
