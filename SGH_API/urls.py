@@ -42,6 +42,8 @@ urlpatterns = [
     url(r'^archivo/', include('archivoestudio.urls')),
     path('', include('archivo.urls')), 
     path('', include('agenda.urls')), 
+    path('', include('turno.urls')), 
+    path('', include('turno_distribucion.urls')), 
 ]
 
 if settings.DEBUG:

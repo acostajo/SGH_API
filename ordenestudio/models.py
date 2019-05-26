@@ -9,12 +9,8 @@ class OrdenEstudio(models.Model):
 
     codordenestudio = models.AutoField(primary_key=True)
     codusuario = models.IntegerField(null=True, blank=True)
-    codficha = models.ForeignKey(
-        Ficha, on_delete=models.DO_NOTHING, null=False, default=0
-    )
-    codestudio = models.ForeignKey(
-        Estudio, on_delete=models.DO_NOTHING, null=True
-    )  # código interno único para el estudio
+    codficha = models.IntegerField(null=True, blank=True)
+    codestudio = models.IntegerField(null=True, blank=True) 
     observacion = models.CharField(max_length=200, blank=True)
     estado = models.CharField(max_length=15, blank=True, null=True, default="Pendiente")
     fechaordenestudio = models.DateField(blank=True, null=True)

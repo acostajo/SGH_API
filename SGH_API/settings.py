@@ -55,6 +55,8 @@ INSTALLED_APPS = [
     "eventocardio_ficha.apps.EventocardioFichaConfig",
     "fames.apps.FamesConfig",
     "archivo.apps.ArchivoConfig",
+    "turno.apps.TurnoConfig",
+    "turno_distribucion.apps.TurnoDistribucionConfig",
     "famesficha.apps.FamesFichaConfig",
     "manifestacion.apps.ManifestacionConfig",
     "maniextraarti.apps.ManiExtraArtiConfig",
@@ -103,7 +105,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "0909",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "5432",
     }

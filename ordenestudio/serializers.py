@@ -7,12 +7,4 @@ class OrdenEstudioSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = OrdenEstudio
-        fields = (
-            "codordenestudio",
-            "codusuario",
-            "codficha",
-            "observacion",
-            "estado",
-            "fechaordenestudio",
-            "fechacreada",
-        )
+        fields = '__all__'
