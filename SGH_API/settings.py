@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     "manifestacion.apps.ManifestacionConfig",
     "maniextraarti.apps.ManiExtraArtiConfig",
     "panolab.apps.PanolabConfig",
+    "agenda.apps.AgendaConfig",
 ]
 
 

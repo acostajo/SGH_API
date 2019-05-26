@@ -41,6 +41,7 @@ urlpatterns = [
     path('', include('famesficha.urls')),
     url(r'^archivo/', include('archivoestudio.urls')),
     path('', include('archivo.urls')), 
+    path('', include('agenda.urls')), 
 ]
 
 if settings.DEBUG:
