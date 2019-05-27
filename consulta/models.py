@@ -16,14 +16,14 @@ class Consulta(models.Model):
     edad = models.IntegerField(default=0)  # edad del paciente
     # fecha en la cual se emitió la consulta
     fechaconsulta = models.DateField()
-    diagnostico = models.CharField(max_length=80)  # descripción diagnostico
-    tratamientoactual = models.CharField(
-        max_length=200, blank=True
+    diagnostico = models.TextField()  # descripción diagnostico
+    tratamientoactual = models.TextField(
+      blank=True
     )  # descripción tratamiento actual
-    evolucion = models.CharField(max_length=80)  # descripción de la evolución
+    evolucion = models.TextField()  # descripción de la evolución
     # descripción de las limitaciones que posee el Paciente
-    limitacion = models.CharField(max_length=80)
-    limitacionmotivo = models.CharField(max_length=80)
+    limitacion = models.TextField()
+    limitacionmotivo = models.TextField()
     presionarte = models.IntegerField(
         blank=True, null=True
     )  # medida de la presión arterial
@@ -70,7 +70,7 @@ class Consulta(models.Model):
     DAS28_PCR_RANGO = models.CharField(max_length=80, blank=True, null=True)
     sientepaci = models.CharField(max_length=80, blank=True, null=True)
     # descripción del plan para el paciente
-    plan = models.CharField(max_length=80, blank=True, null=True)
+    plan = models.TextField(blank=True, null=True)
     # fecha de creación de la consulta
     checkNAD1 = models.BooleanField( default=False,blank=True, null=True)
     checkNAD2 = models.BooleanField( default=False,blank=True, null=True)

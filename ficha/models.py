@@ -32,7 +32,7 @@ class Ficha(models.Model):
         max_length=80, blank=True, null=True
     )  # escolaridad del paciente
     # diagnóstico inicial del paciente
-    diagnostico = models.CharField(max_length=80, blank=True, null=True)
+    diagnostico = models.TextField( blank=True, null=True)
     fechadiagnos = models.DateField(blank=True, null=True)  # fecha del diagnostico
     # fecha de nacimiento del paciente
     fechanaci = models.DateField(blank=True, null=True)
@@ -50,29 +50,29 @@ class Ficha(models.Model):
     iniciosint = models.DateField(
         blank=True, null=True
     )  # Fecha en el que el Paciente empezó a notar síntomas
-    formainic = models.CharField(
-        max_length=50, blank=True
+    formainic = models.TextField(
+       blank=True
     )  # Descripción de los síntomas del paciente
-    apf = models.CharField(
-        max_length=50, blank=True
+    apf = models.TextField(
+        blank=True
     )  # Antecedentes Patológicos Familiares
-    apfcv = models.CharField(
-        max_length=50, blank=True
+    apfcv = models.TextField(
+         blank=True
     )  # Antecedentes patológicos familiares cardiovasculares
-    appfractura = models.CharField(
-        max_length=50, blank=True
+    appfractura = models.TextField(
+        blank=True
     )  # Antecedentes patológicos personales de fracturas
-    apffractura = models.CharField(
-        max_length=50, blank=True
+    apffractura = models.TextField(
+     blank=True
     )  # Antecedentes patológicos familiares de fracturas
-    protesissitio = models.CharField(
-        max_length=50, blank=True
+    protesissitio = models.TextField(
+     blank=True
     )  # Datos de prótesis del Paciente
     protefecha = models.DateField(
         null=True, blank=True
     )  # Datos de prótesis del Paciente
-    apfneoplasias = models.CharField(
-        max_length=50, blank=True
+    apfneoplasias = models.TextField(
+      blank=True
     )  # Antecedentes familiares de neoplasias (tumores)
     sedentarismo = models.BooleanField(null=True)  # Si el Paciente es sedentario
     actifisica = models.BooleanField(

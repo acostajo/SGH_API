@@ -67,7 +67,7 @@ class Panolab(models.Model):
     antidnaneg = models.IntegerField(blank=True, null=True)
     prot24 = models.IntegerField(blank=True, null=True)  # proteinuria de 24hs
     # información adicional que se puede incluir
-    observacion = models.CharField(max_length=80, blank=True, null=True)
+    observacion = models.TextField(blank=True, null=True)
     # fecha de creación de la orden de medicamento
     fechacreada = models.DateField(auto_now=True)
 
