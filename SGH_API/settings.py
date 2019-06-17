@@ -32,6 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django_filters",
+    'rest_framework.authtoken',
+    'rest_auth',
     "corsheaders",
     "rest_framework",
     "ficha.apps.FichaConfig",
@@ -105,7 +107,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "1234",
+        "PASSWORD": "0909",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -150,3 +152,8 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = 'none'

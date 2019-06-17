@@ -44,6 +44,7 @@ urlpatterns = [
     path('', include('agenda.urls')), 
     path('', include('turno.urls')), 
     path('', include('turno_distribucion.urls')), 
+    path('rest-auth/', include('rest_auth.urls'))
 ]
 
 if settings.DEBUG:
