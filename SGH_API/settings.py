@@ -31,7 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'users.apps.UsersConfig',
     "django_filters",
+    'rest_framework.authtoken',
+    'rest_auth',
+    'django.contrib.sites',
+    'allauth',
+    'allauth.account',
+    'rest_auth.registration',
     "corsheaders",
     "rest_framework",
     "ficha.apps.FichaConfig",
@@ -64,6 +71,7 @@ INSTALLED_APPS = [
     "agenda.apps.AgendaConfig",
 ]
 
+SITE_ID = 1
 
 MIDDLEWARE = [
     "corsheaders.middleware.CorsMiddleware",
@@ -105,7 +113,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "1234",
+        "PASSWORD": "0909",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -150,3 +158,17 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+
+ACCOUNT_EMAIL_REQUIRED = False
+ACCOUNT_AUTHENTICATION_METHOD = 'username'
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+
+AUTH_USER_MODEL = 'users.User'
+
+REST_AUTH_SERIALIZERS = {
+    "USER_DETAILS_SERIALIZER": "users.serializers.CustomUserDetailsSerializer",
+}
+REST_AUTH_REGISTER_SERIALIZERS = {
+    "REGISTER_SERIALIZER": "users.serializers.CustomRegisterSerializer",
+}
