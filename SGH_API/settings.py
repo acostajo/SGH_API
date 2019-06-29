@@ -32,8 +32,8 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "django_filters",
-    'rest_framework.authtoken',
-    'rest_auth',
+    "rest_framework.authtoken",
+    "rest_auth",
     "corsheaders",
     "rest_framework",
     "ficha.apps.FichaConfig",
@@ -49,8 +49,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "consulta.apps.ConsultaConfig",
-    'estudio.apps.EstudioConfig',
-    'ordenestudio.apps.OrdenestudioConfig',
+    "estudio.apps.EstudioConfig",
+    "ordenestudio.apps.OrdenestudioConfig",
     "efectoadverso.apps.EfectoAdversoConfig",
     "efectoadverso_consulta.apps.EfectoadversoConsultaConfig",
     "eventocardiovascular.apps.EventocardiovascularConfig",
@@ -150,10 +150,11 @@ CORS_ORIGIN_WHITELIST = "localhost:8000/"
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
 ACCOUNT_EMAIL_REQUIRED = False
-ACCOUNT_AUTHENTICATION_METHOD = 'username'
-ACCOUNT_EMAIL_VERIFICATION = 'none'
+ACCOUNT_AUTHENTICATION_METHOD = "username"
+ACCOUNT_EMAIL_VERIFICATION = "none"
+
