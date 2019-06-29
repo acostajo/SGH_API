@@ -54,8 +54,8 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     "consulta.apps.ConsultaConfig",
-    'estudio.apps.EstudioConfig',
-    'ordenestudio.apps.OrdenestudioConfig',
+    "estudio.apps.EstudioConfig",
+    "ordenestudio.apps.OrdenestudioConfig",
     "efectoadverso.apps.EfectoAdversoConfig",
     "efectoadverso_consulta.apps.EfectoadversoConsultaConfig",
     "eventocardiovascular.apps.EventocardiovascularConfig",
@@ -156,7 +156,7 @@ CORS_ORIGIN_WHITELIST = "localhost:8000/"
 
 CORS_ORIGIN_ALLOW_ALL = True
 
-MEDIA_URL = '/media/'
+MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 
 
