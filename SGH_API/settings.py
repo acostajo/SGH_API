@@ -34,7 +34,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     "django_filters",
     'rest_framework.authtoken',
-    'rest_auth',
+    "rest_auth",
     'django.contrib.sites',
     'allauth',
     'allauth.account',
@@ -113,7 +113,7 @@ DATABASES = {
         "ENGINE": "django.db.backends.postgresql_psycopg2",
         "NAME": "SGHBackEnd",
         "USER": "postgres",
-        "PASSWORD": "0909",
+        "PASSWORD": "1234",
         "HOST": "localhost",
         "PORT": "5432",
     }
@@ -167,7 +167,8 @@ ACCOUNT_EMAIL_VERIFICATION = 'none'
 AUTH_USER_MODEL = 'users.User'
 
 REST_AUTH_SERIALIZERS = {
-    "USER_DETAILS_SERIALIZER": "users.serializers.CustomUserDetailsSerializer",
+    "USER_DETAILS_SERIALIZER": "rest_auth.serializers.UserDetailsSerializer",
+    
 }
 REST_AUTH_REGISTER_SERIALIZERS = {
     "REGISTER_SERIALIZER": "users.serializers.CustomRegisterSerializer",

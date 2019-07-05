@@ -1,6 +1,7 @@
 from rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 from .models import User
+from rest_framework.response import Response
 
 
 class CustomRegisterSerializer(RegisterSerializer):
@@ -20,5 +21,5 @@ class CustomUserDetailsSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = '__all__'
+        fields = ('tipo','username')
        

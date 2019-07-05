@@ -45,8 +45,10 @@ urlpatterns = [
     path('', include('turno.urls')), 
     path('', include('turno_distribucion.urls')), 
     path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/', include('rest_auth.urls')),
-    path('rest-auth/registration/', include('rest_auth.registration.urls'))
+    path('rest-auth/registration/', include('rest_auth.registration.urls')),
+    path('', include('users.urls_api')), 
+    path('', include('users.urls')), 
+    
 ]
 
 if settings.DEBUG:
