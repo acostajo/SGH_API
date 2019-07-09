@@ -15,7 +15,7 @@ class ArchivoViewSet(viewsets.ModelViewSet):
     queryset = Archivo.objects.all()
     serializer_class = ArchivoSerializer
     filter_backends = (DjangoFilterBackend,)
-    filter_fields = ("archivo_id",)
+    filter_fields = ("codordenestudio", "archivo_id", "fecha_creada")
     permission_classes = (permissions.AllowAny,) # we assume that we have a session user
     parser_classes = (MultiPartParser, FormParser)
 
